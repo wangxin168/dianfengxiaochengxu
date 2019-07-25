@@ -1,0 +1,12 @@
+
+<view wx:if="{{canIUse}}" class='ding'>
+  <image src='/img/home/logo.png' style='border-radius:50%;'></image>
+  <view class='title'>巅峰社交</view>
+  <view class='trips'>申请获取以下权限</view>
+  <view class='infos'>获得你的公开信息（昵称，头像）</view>
+  <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+    授权登录
+  </button>
+</view>
+
+<view wx:else>请升级微信版本</view>

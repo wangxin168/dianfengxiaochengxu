@@ -1,0 +1,38 @@
+<!--pages/wode/wode.wxml-->
+<!-- <text>pages/wode/wode.wxml</text> -->
+<view class='home'>
+  <image src='../../img/home/bg.png' class='home_bg'></image>
+  <view class='news' bindtap='ziliao' wx:if="{{no_login}}">
+    <view class='actor'>
+      <image src='{{userinfo.avatar}}' mode="aspectFill"></image>
+    </view>
+    <view class='nickname'>
+      <view>{{userinfo.nickname}}</view>
+      <view>ID:{{userinfo.account_id}}</view>
+    </view>
+    <image src='../../img/home/right.png' class='right_dian'></image>
+  </view>
+  <view class='news' bindtap='ziliao' wx:if="{{!no_login}}">
+    <view class='actor'>
+      <image src='../../img/home/2f7bcc61a4f725d2ffeac5140110d9c.png'></image>
+    </view>
+    <view class='nickname'>
+      <view>登录/注册</view>
+      <view>登录后可享受更多权限</view>
+    </view>
+    <image src='../../img/home/right.png' class='right_dian'></image>
+  </view>
+
+  <view class="authorItem">
+    <view class="perItem">
+      <image class="iconImgs" src="../../img/home/yaoqing.png" alt="" />
+      <text>我的邀请码</text>
+      <text class="inviteCode">{{userinfo.invite_code}}</text>
+    </view>
+    <view class="perItem" bindtap='autr'>
+      <image class="iconImgs" src="../../img/home/renzheng.png" alt="" />
+      <text>我的认证</text>
+      <image class="arrowIcon" src="../../img/home/right.png" alt="" />
+    </view>
+  </view>
+</view>

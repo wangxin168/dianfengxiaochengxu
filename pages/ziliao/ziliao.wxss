@@ -1,0 +1,86 @@
+/* pages/ziliao/ziliao.wxss */
+page{
+  color:#fff;
+}
+.box {
+  font-family: 'PingFangSC-Regular';
+  padding-top: 20rpx;
+  padding-left: 3%;
+  font-size: 32rpx;
+}
+
+.box .box_li {
+  padding: 20rpx 0;
+  padding-right: 40rpx;
+  line-height: 80rpx;
+  overflow: hidden;
+  border-bottom: 1px solid #695f6a;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.touxiang {
+  display: inline-block;
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+
+.photo {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 50%;
+  vertical-align: bottom;
+  margin-right: 20rpx;
+  display: block;
+  object-fit: cover;
+}
+
+.box .right {
+  vertical-align: middle;
+  transform: scale(0.7);
+}
+
+.sca {
+  transform: scale(0.7);
+}
+
+.box .text {
+  position: relative;
+  top: 20rpx;
+}
+
+.value {
+  color: #898989;
+  font-size: 28rpx;
+}
+
+.save-btn {
+  display: block;
+  width: 550rpx;
+  height: 100rpx;
+  background: #b83af3;
+  background: linear-gradient(to right, #6950fb, #b83af3);
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 30rpx;
+  margin: 120rpx auto 0;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.right,.sca{
+  width: 26rpx;
+  height: 30rpx;
+}

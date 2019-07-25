@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/wode/wode",
+    "pages/zhubo_xiang/zhubo_xiang",
+    "pages/login/login",
+    "pages/denglu/denglu",
+    "pages/zhuce/zhuce",
+    "pages/house/house",
+    "pages/ziliao/ziliao",
+    "pages/revnick/revnick",
+    "pages/autr/autr",
+    "pages/autring/autring",
+    "pages/reautr/reautr"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#142338",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#989898",
+    "selectedColor": "#2B3047",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/icon/home_n.png",
+        "selectedIconPath": "img/icon/home_y.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "榜单",
+        "iconPath": "img/icon/bang_n.png",
+        "selectedIconPath": "img/icon/bang_y.png"
+      },
+      {
+        "pagePath": "pages/wode/wode",
+        "text": "我的",
+        "iconPath": "img/icon/wode_n.png",
+        "selectedIconPath": "img/icon/wode_y.png"
+      }
+    ]
+  }
+}

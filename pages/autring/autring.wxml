@@ -1,0 +1,8 @@
+<!--pages/autring/autring.wxml-->
+<!-- <text>pages/autring/autring.wxml</text> -->
+<view class='box home'>
+  <image src='../../img/home/bg.png' class='home_bg'></image>
+  <image src="../../img/home/renzheng1.png" alt="" class="renzheng" />
+  <view class="con">您的认证已提交，正在审核中...</view>
+  <view class="linear-gradients-btn withdraw-btn" bindtap='fan'>返回首页</view>
+</view>

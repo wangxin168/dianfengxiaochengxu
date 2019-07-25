@@ -1,0 +1,78 @@
+<!--pages/house/house.wxml-->
+<!-- <text>pages/house/house.wxml</text> -->
+<view class="top_di">
+<image src='../../img/home/hou.png' class='ding_img'></image>
+  <view class="top_left">
+  <image src='{{house_img}}' class='house_img'></image>
+    <view class="jindu">
+      <view class="jindu_jin" style='width:{{baifen}}%'></view>
+    </view>
+    <view class='dengji_lv'>LV.
+      <text class="dengji">{{dengji}}</text>
+    </view>
+  </view>
+  <view class="top_right">
+    <image src='../../img/home/juxing.png' class='ju_img'></image>
+    <view class="touxiang">
+      <image src="{{details.avatar}}" alt="" class="actor_tou"/>
+    </view>
+    <view class="nicheng">
+      <view class="nickname">{{details.nickname}}</view>
+      <view>的家园</view>
+    </view>
+  </view>
+</view>
+<view class="cat zoon">
+			<view>
+				<image src="{{cat_one}}" alt="" class="dongwu cat_one"/>
+				<image src="../../img/home/tuoyuan.png" class="keng"/>
+			</view>
+			<view>
+				<image src="{{cat_two}}" alt="" class="dongwu cat_two"/>
+				<image src="../../img/home/tuoyuan.png" class="keng"/>
+			</view>
+			<view>
+				<image src="{{cat_three}}" alt="" class="dongwu cat_three"/>
+				<image src="../../img/home/tuoyuan.png" class="keng"/>
+			</view>
+			<view>
+				<image src="{{cat_four}}" alt="" class="dongwu cat_four"/>
+				<image src="../../img/home/tuoyuan.png" class="keng"/>
+			</view>
+		</view>
+		<view class="dog zoon">
+			<view>
+				<image src="{{dog_one}}" alt="" class="dongwu dog_one"/>
+				<image src="../../img/home/tuoyuan.png" class="keng"/>
+			</view>
+			<view>
+				<image src="{{dog_two}}" alt="" class="dongwu dog_two"/>
+				<image src="../../img/home/tuoyuan.png" class="keng"/>
+			</view>
+			<view>
+				<image src="{{dog_three}}" alt="" class="dongwu dog_three"/>
+				<image src="../../img/home/tuoyuan.png" class="keng"/>
+			</view>
+			<view>
+				<image src="{{dog_four}}" alt="" class="dongwu dog_four"/>
+				<image src="../../img/home/tuoyuan.png" class="keng"/>
+			</view>
+		</view>
+		<view class="fish zoon">
+			<view>
+				<image src="{{fish_one}}" alt="" class="dongwu fish_one"/>
+				<image src="../../img/home/tuoyuan.png" class="keng"/>
+			</view>
+			<view>
+				<image src="{{fish_two}}" alt="" class="dongwu fish_two"/>
+				<image src="../../img/home/tuoyuan.png" class="keng"/>
+			</view>
+			<view>
+				<image src="{{fish_three}}" alt="" class="dongwu fish_three"/>
+				<image src="../../img/home/tuoyuan.png" class="keng"/>
+			</view>
+			<view>
+				<image src="{{fish_four}}" alt="" class="dongwu fish_four"/>
+				<image src="../../img/home/tuoyuan.png" class="keng"/>
+			</view>
+		</view>

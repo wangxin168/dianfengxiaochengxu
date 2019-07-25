@@ -1,0 +1,62 @@
+<view class='home'>
+  <image src='../../img/home/bg.png' class='home_bg'></image>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='my_swiper_box' circular="true" indicator-active-color="#655AF6">
+    <block wx:for="{{imgUrls}}" wx:key='index'>
+      <swiper-item bindtap="tiaozhuan" data-type="{{item.type}}" data-route_id="{{item.route_id}}" data-id="{{item.id}}">
+        <image src="{{item}}" class="slide-image my_swiper_img" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- tab标签 -->
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==idx ? 'on' : ''}}" data-current="{{idx}}" data-tid="{{idx}}" bindtap="swichNav" wx:for="{{navtab}}" wx:key="index" wx:for-index="idx">{{item}}</view>
+  </view>
+  <view class="swiper-box">
+    <view wx:if="{{currentTab===0}}" class="swiper-item">
+      <view class='list'>
+        <view class='list_li' wx:for="{{zhubo_list}}" wx:key="index">
+          <image src='../../img/home/1.png' class='pai' wx:if="{{item.sorts==1}}"></image>
+          <image src='../../img/home/2.png' class='pai' wx:if="{{item.sorts==2}}"></image>
+          <image src='../../img/home/3.png' class='pai' wx:if="{{item.sorts==3}}"></image>
+          <view class='heise' wx:if="{{item.sorts!=1&&item.sorts!=2&&item.sorts!=3}}">{{item.sorts}}</view>
+          <image src='{{item.avatar}}' class='actor' mode="aspectFill"></image>
+          <view class='meili'>
+            <view>{{item.nickname}}</view>
+            <view>魅力值:{{item.inc_hotnum}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{currentTab===1}}" class="swiper-item">
+      <view class='list'>
+        <view class='list_li' wx:for="{{zhubo_list}}" wx:key="index">
+          <image src='../../img/home/1.png' class='pai' wx:if="{{item.sorts==1}}"></image>
+          <image src='../../img/home/2.png' class='pai' wx:if="{{item.sorts==2}}"></image>
+          <image src='../../img/home/3.png' class='pai' wx:if="{{item.sorts==3}}"></image>
+          <view class='heise' wx:if="{{item.sorts!=1&&item.sorts!=2&&item.sorts!=3}}">{{item.sorts}}</view>
+          <image src='{{item.avatar}}' class='actor'></image>
+          <view class='meili'>
+            <view>{{item.nickname}}</view>
+            <view>魅力值:{{item.inc_hotnum}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{currentTab===2}}" class="swiper-item">
+      <view class='list'>
+        <view class='list_li' wx:for="{{zhubo_list}}" wx:key="index">
+          <image src='../../img/home/1.png' class='pai' wx:if="{{item.sorts==1}}"></image>
+          <image src='../../img/home/2.png' class='pai' wx:if="{{item.sorts==2}}"></image>
+          <image src='../../img/home/3.png' class='pai' wx:if="{{item.sorts==3}}"></image>
+          <view class='heise' wx:if="{{item.sorts!=1&&item.sorts!=2&&item.sorts!=3}}">{{item.sorts}}</view>
+          <image src='{{item.avatar}}' class='actor'></image>
+          <view class='meili'>
+            <view>{{item.nickname}}</view>
+            <view>魅力值:{{item.inc_hotnum}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,7 @@
+<!--pages/revnick/revnick.wxml-->
+<!-- <text>pages/revnick/revnick.wxml</text> -->
+<view class="box home">
+<image src='../../img/home/bg.png' class='home_bg'></image>
+  <input type="text" class="input" placeholder="请输入需要修改昵称" bindinput='nick' />
+  <button class="save-btn" bindtap='ok'>确定</button>
+</view>

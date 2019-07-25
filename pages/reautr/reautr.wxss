@@ -1,0 +1,144 @@
+/* pages/reautr/reautr.wxss */
+page {
+  color: #fff;
+}
+
+.box {
+  font-family: 'PingFangSC-Regular';
+  /* padding-top: 20rpx; */
+  padding-left: 3%;
+  font-size: 32rpx;
+  padding-bottom: 20rpx;
+}
+
+.box_li {
+  padding: 20rpx 0;
+  padding-right: 20rpx;
+  line-height: 80rpx;
+  overflow: hidden;
+  border-bottom: 1px solid #695f6a;
+  display: flex;
+  align-items: center;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.box .text {
+  width: 150rpx;
+  /* height: 50rpx; */
+  margin-right: 40rpx;
+}
+
+.value {
+  color: #898989;
+  font-size: 28rpx;
+}
+
+.save-btn {
+  display: block;
+  width: 550rpx;
+  height: 100rpx;
+  background: #b83af3;
+  background: linear-gradient(to right, #6950fb, #b83af3);
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 30rpx;
+  margin: 0 auto 50rpx;
+  border-radius: 8rpx;
+  line-height: 100rpx;
+  margin-left: 9.5%;
+}
+
+.input {
+  min-width: 400rpx;
+  display: inline-block;
+  height: 60rpx;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+.select {
+  width: 500rpx;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #898989;
+}
+
+.file {
+  min-height: 180rpx;
+  position: relative;
+}
+
+.file-img {
+  width: 200rpx;
+  height: 188rpx;
+  margin-top: 20rpx;
+  margin-bottom: 50rpx
+}
+
+.textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  margin-top: 20rpx;
+}
+
+.file-input {
+  width: 200rpx;
+  height: 200rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1000;
+}
+
+.float {
+  width: 200rpx;
+  height: 173.18rpx;
+  display: inline-block;
+}
+
+.result {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.result image {
+  width: 100rpx;
+  height: 173.18rpx;
+}
+
+.da {
+  width: 100%;
+  /* height: 1.7318rem; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.da imagee {
+  width: 200rpx;
+  height: 173.18rpx;
+  display: block;
+  object-fit: cover;
+  margin-left: 30rpx;
+  margin-top:30rpx;
+}
+.shangc_img{
+  width: 233rpx;
+  height: 233rpx;
+  /* margin-left: 20rpx; */
+}

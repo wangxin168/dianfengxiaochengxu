@@ -1,0 +1,72 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+<view class='home'>
+  <image src='../../img/home/bg.png' class='home_bg'></image>
+  <view class='serch_box'>
+    <input type="text" class="search-input" placeholder="搜索（输入主播名称或ID）" bindinput='serch'/>
+		<image src="../../img/home/serch.png" alt="" class="magnifier" />
+  </view>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='my_swiper_box' circular="true" indicator-active-color="#655AF6">
+    <block wx:for="{{imgUrls}}" wx:key='index'>
+      <swiper-item bindtap="tiaozhuan" data-type="{{item.type}}" data-route_id="{{item.route_id}}" data-id="{{item.id}}">
+        <image src="{{item}}" class="slide-image my_swiper_img" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- tab标签 -->
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==idx ? 'on' : ''}}" data-current="{{idx}}" data-tid="{{idx}}" bindtap="swichNav" wx:for="{{navtab}}" wx:key="index" wx:for-index="idx">{{item}}</view>
+    <view class="section">
+      <!-- <view class="section__title">分类</view> -->
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{name}}">
+        <view class="picker">
+          <view wx:if="{{index==''}}">分类</view>
+          <view wx:if="{{!index==''}}">{{array[index].platform_name}}</view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="swiper-box">
+    <view wx:if="{{currentTab===0}}" class="swiper-item">
+      <view class='list'>
+        <view class='list_li' bindtap='zhubo_xiang' wx:for="{{zhubo_list}}" wx:key="index" data-account_id="{{item.account_id}}">
+          <image src='../../img/home/num1.png' wx:if="{{item.num_one==1}}" class='num_one'></image>
+          <image src='{{item.img}}' mode="aspectFill"></image>
+          <view class='touming'>
+            <text class='title'>{{item.username}}</text>
+            <view>
+              <image src='../../img/home/-meilishouyi.png'></image>
+              <text>{{item.inc_hotnum}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{currentTab===1}}" class="swiper-item">
+      <view class='list'>
+        <view class='list_li' bindtap='zhubo_xiang' wx:for="{{zhubo_list}}" wx:key="index" data-account_id="{{item.account_id}}">
+          <image src='../../img/home/num1.png' wx:if="{{item.num_one==1}}" class='num_one'></image>
+          <image src='{{item.img}}' mode="aspectFill"></image>
+          <view class='touming'>
+            <text class='title'>{{item.username}}</text>
+            <view>
+              <image src='../../img/home/-meilishouyi.png'></image>
+              <text>{{item.inc_hotnum}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

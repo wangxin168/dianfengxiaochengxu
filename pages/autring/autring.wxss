@@ -1,0 +1,27 @@
+/* pages/autring/autring.wxss */
+
+.renzheng {
+  width: 114rpx;
+  height: 114rpx;
+  margin: 240rpx auto 0;
+  display: block;
+}
+
+.con {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  margin-top: 80rpx;
+}
+
+.withdraw-btn {
+  margin: 70rpx auto 0;
+  width: 220rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  font-size: 35rpx;
+  border-radius: 10rpx;
+  background: linear-gradient(to right, #6950fb, #b83af3);
+  color: white;
+  text-align: center;
+}

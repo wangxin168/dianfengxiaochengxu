@@ -1,0 +1,166 @@
+/* pages/wode/wode.wxss */
+
+.home {
+  width: 100%;
+  height: 100%;
+}
+
+.home .home_bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.news {
+  width: 100%;
+  margin-top: 48rpx;
+  padding: 0 40rpx 0 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.actor {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  box-shadow: 0rpx 0rpx 0rpx #000;
+  text-align: center;
+}
+
+.actor image {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+}
+
+.nickname {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 22rpx;
+  width: 515rpx;
+}
+
+.nickname view:nth-of-type(1) {
+  font-size: 34rpx;
+  color: #fff;
+}
+
+.nickname view:nth-of-type(2) {
+  font-size: 30rpx;
+  color: #9d9d9d;
+}
+
+.right_dian {
+  width: 13rpx;
+  height: 23rpx;
+}
+
+/*个人资产*/
+
+.myAssets {
+  width: 688rpx;
+  height: 156rpx;
+  margin: auto;
+  margin-top: 39rpx;
+  border-radius: 15rpx;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+}
+
+.myAssets .diamonds, .myAssets .goldCoin {
+  width: 50%;
+  text-align: center;
+  padding-top: 31rpx;
+}
+
+.myAssets .diamonds view {
+  border-right: 1px solid #d8d8d8;
+}
+
+.myAssets .diamonds .numTxt, .myAssets .goldCoin .numTxt {
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #333;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.myAssets .diamonds .iconItem, .myAssets .goldCoin .iconItem {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #9d9d9d;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.myAssets .diamonds image, .myAssets .goldCoin image {
+  position: relative;
+  top: -2rpx;
+  display: inline-block;
+  width: 32rpx;
+  height: 29rpx;
+  vertical-align: middle;
+  margin-right: 6rpx;
+}
+
+/*个人列表*/
+
+.authorItem {
+  width: 688rpx;
+  height: 233rpx;
+  margin: auto;
+  margin-top: 62rpx;
+  border-radius: 15rpx;
+  background-color: #fff;
+  padding: 0 0 0 26rpx;
+  box-sizing: border-box;
+}
+
+.authorItem .perItem {
+  position: relative;
+  height: 112rpx;
+  padding-right: 26rpx;
+  border-bottom: 1px solid #ececec;
+  line-height: 112rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #444;
+  display: flex;
+  align-items: center;
+}
+
+.authorItem .perItem:last-child {
+  border: none;
+}
+
+.authorItem .perItem .iconImgs {
+  vertical-align: middle;
+  width: 38rpx;
+  margin-right: 18rpx;
+  height: 37rpx;
+}
+
+.authorItem .perItem .arrowIcon {
+  width: 13rpx;
+  height: 23rpx;
+  position: absolute;
+  right: 26rpx;
+  top: 45rpx;
+}
+
+.authorItem .perItem .inviteCode {
+  position: absolute;
+  right: 26rpx;
+  line-height: 112rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #9d9d9d;
+}

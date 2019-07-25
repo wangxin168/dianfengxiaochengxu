@@ -1,0 +1,38 @@
+<!--pages/autr/autr.wxml-->
+<!-- <text>pages/autr/autr.wxml</text> -->
+<view class='home box'>
+  <image src='../../img/home/bg.png' class='home_bg'></image>
+  <view>
+    <view class='box_li'>
+      <view class="fl text">邀请码</view>
+      <input type="text" placeholder="请输入邀请码（非必填项）" class="input" id="yqma" bindinput='yaoq' />
+    </view>
+    <view class='box_li'>
+      <view class="fl text">姓名</view>
+      <input type="text" placeholder="请输入您的姓名" class="input" id="name" bindinput='name' />
+    </view>
+    <view class="ping_tai box_li">
+      <view class="fl text">所属平台</view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" style='width:530rpx;'>
+          <view class="picker">
+            <text wx:if="{{chushi_sex==1}}" style='font-size: 30rpx;color: #9A9A9A;'>{{array[index]}}</text>
+            <text wx:if="{{chushi_sex==0}}" style='font-size: 30rpx;color: #9A9A9A;'>请选择所属平台</text>
+          </view>
+        </picker>
+    </view>
+    <view style="border-bottom: 1px solid #695f6a;">
+      <view style="display: block;margin-top:20rpx;">上传形象照片</view>
+      <view style="display: flex;">
+        <image src="../../img/home/shangc.png" alt="" class="file-img" bindtap='up_img' name="up_img" />
+        <text class='value' style='margin-top:180rpx;'>（最多上传五张图片）</text>
+      </view>
+      <image wx:for="{{tempFilePaths}}" wx:key="index" src='{{item}}' name="pic" mode="aspectFill" class='shangc_img'/>
+      <input hidden name="pic" value="{{tempFilePaths}}"></input>
+    </view>
+    <view>
+      <view style='margin-top:20rpx'>文字介绍</view>
+      <textarea name="" cols="30" rows="4" placeholder="请输入您想说的话…" class="textarea" id="jieshao" bindinput='jieshao'></textarea>
+    </view>
+  </view>
+  <button class="save-btn" bindtap='savebtn'>提交认证</button>
+</view>

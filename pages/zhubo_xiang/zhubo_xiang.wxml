@@ -1,0 +1,74 @@
+<!--pages/zhubo_xiang/zhubo_xiang.wxml-->
+<view class='home'>
+  <image src='../../img/home/bg.png' class='home_bg'></image>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='my_swiper_box' circular="true" indicator-active-color="#655AF6">
+    <block wx:for="{{imgUrls}}" wx:key='index'>
+      <swiper-item bindtap="tiaozhuan" data-type="{{item.type}}" data-route_id="{{item.route_id}}" data-id="{{item.id}}">
+        <image src="{{item}}" class="slide-image my_swiper_img" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- tab标签 -->
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==idx ? 'on' : ''}}" data-current="{{idx}}" data-tid="{{idx}}" bindtap="swichNav" wx:for="{{navtab}}" wx:key="index" wx:for-index="idx">{{item}}</view>
+  </view>
+  <image src="../../img/home/jiayuan.png" alt="" class='his-btn' bindtap='house' data-account_id="{{details.account_id}}"/>
+  <view class="swiper-box">
+    <view wx:if="{{currentTab===0}}" class="swiper-item">
+    
+      <view class="jieshao">
+        <view class="box-body">
+          <view class="content">
+            <view class="user-info">
+              <image src="{{details.avatar}}" alt="" class="head" mode="aspectFill"/>
+              <view class="ul-list">
+                <view>{{details.nickname}}
+                  <text class="icon">{{details.platform}}</text>
+                </view>
+                <view class="user-id grey">ID：{{details.account_id}}</view>
+                <view class="grey">
+                  <image src="../../img/home/-meilishouyi.png" alt="" class="heart" />
+                  <text class="user-num">{{details.inc_hotnum}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="intro">
+            <view class="title">主播简介</view>
+            <view>
+              {{details.words}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{currentTab===1}}" class="swiper-item">
+      <view class="liuyan">
+				<view class="liuyan-box">
+					<view class="liuyan_ul">
+            <view class='liuyan_li' wx:for="{{liuyan_list}}" wx:key="index">
+              <view style='display:flex;algin-item:center;'>
+                <view style="width:54rpx;height:54rpx;overflow:hidden;border-radius: 50%;display:inline-block;">
+                  <image src='{{item.avatar}}' class='photo'></image>
+                </view>
+                <text style='margin-left:10rpx;'>{{item.nickname}}</text>
+              </view>
+              <view class="user-talk">{{item.content}}</view>
+            </view>
+					</view>
+					<view class="send">
+						<view class="send-group">
+							<view class="send-input-box">
+								<input type="text" class="fl input" placeholder="请输入你想说的话" id="liuyan_inp" />
+								<button class="fl send-btn">发送</button>
+							</view>
+							<text class="liwu">
+								<img src="../assets/jtw/liwu.png" alt="" />
+							</text>
+						</view>
+					</view>
+				</view>
+			</view>
+    </view>
+  </view>
+</view>

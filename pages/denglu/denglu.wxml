@@ -1,0 +1,20 @@
+<!--pages/denglu/denglu.wxml-->
+<!-- <text>pages/denglu/denglu.wxml</text> -->
+<view class="home">
+  <image src='../../img/home/bg.png' class='home_bg'></image>
+  <view class="logo">LOGO</view>
+  <view class="login-container">
+    <view class="input-box">
+      <view>手机号</view>
+      <input placeholder="请输入手机号" type="text" id="iphone" bindinput="iphone" />
+    </view>
+    <view class="input-box">
+      <view>密码</view>
+      <input placeholder="请输入密码" type="password" id="pass" bindinput="pass" />
+    </view>
+    <view class="login-btn" bindtap='denglu'>立即登录</view>
+    <a href="./register.html">
+      <view class="register-btn" bindtap='zhuce'>去注册</view>
+    </a>
+  </view>
+</view>

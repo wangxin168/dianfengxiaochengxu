@@ -1,0 +1,27 @@
+<!--pages/zhuce/zhuce.wxml-->
+<!-- <text>pages/zhuce/zhuce.wxml</text> -->
+<view class="home">
+  <image src='../../img/home/bg.png' class='home_bg'></image>
+  <view class="logo">LOGO</view>
+  <view class="register-container">
+    <view class="input-box">
+      <view>手机号</view>
+      <input placeholder="请输入手机号" type="text" id="iphone" bindinput="iphone"/>
+    </view>
+    <view class="code-box">
+      <input placeholder="请输入验证码" type="text" id="code" bindinput="code"/>
+      <button disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode" class='code' style='color:#fff;'>
+{{time}}
+</button>
+    </view>
+    <view class="input-box">
+      <view>请输入密码</view>
+      <input placeholder="请输入密码" type="password" id="pass1" bindinput="pass1"/>
+    </view>
+    <view class="input-box">
+      <view>请确认密码</view>
+      <input placeholder="请确认密码" type="password" id="pass2" bindinput="pass2"/>
+    </view>
+    <view class="login-btn linear-gradients-btn" bindtap='zhuce'>立即注册并登录</view>
+  </view>
+</view>

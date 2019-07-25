@@ -1,0 +1,152 @@
+/**index.wxss**/
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.home {
+  width: 100%;
+  height: 100%;
+}
+
+.home .home_bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.serch_box {
+  width: 702rpx;
+  height: 75rpx;
+  margin: 20rpx auto;
+  border-radius: 37rpx;
+  background: #f3f3f3;
+}
+
+.search-input {
+  width: 100%;
+  height: 100%;
+  margin: 20rpx 0;
+  border-radius: 37rpx;
+  /* background: #fff3f3f3; */
+  outline: none;
+  border: none;
+  padding-left: 200rpx;
+  font-size: 28rpx;
+  color: #b1b1b1;
+}
+
+.search-input::-webkit-input-placeholder {
+  color: #b1b1b1;
+}
+
+.magnifier {
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  top: 44rpx;
+  left: 160rpx;
+}
+
+.my_swiper_box {
+  width: 702rpx;
+  height: 331rpx;
+  margin: auto;
+}
+
+.my_swiper_img {
+  width: 100%;
+  height: 331rpx;
+}
+
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  line-height: 60rpx;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 47rpx;
+  font-size: 32rpx;
+  color: #bfbfbf;
+}
+
+.on {
+  border-bottom: 6rpx solid #d01fe0;
+  color: #fff;
+}
+
+.list {
+  width: 702rpx;
+  margin: 20rpx auto 50rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.list .list_li {
+  width: 344rpx;
+  height: 417rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.list .list_li image {
+  width: 100%;
+  height: 100%;
+}
+
+.list .list_li .touming {
+  width: 100%;
+  height: 70rpx;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  color: #fff;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list .list_li .touming image {
+  width: 19rpx;
+  height: 19rpx;
+}
+
+.list .list_li .touming .title {
+  width: 226rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.num_one {
+  width: 185rpx !important;
+  height: 44rpx !important;
+  position: absolute;
+  top: 9rpx;
+}

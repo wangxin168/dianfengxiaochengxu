@@ -1,0 +1,60 @@
+<!--pages/ziliao/ziliao.wxml-->
+<!-- <text>pages/ziliao/ziliao.wxml</text> -->
+<view class="box home">
+  <image src='../../img/home/bg.png' class='home_bg'></image>
+  <view>
+    <view class="avatarIcon box_li">
+      <view class="fl text">头像</view>
+      <view class="fr" style="height: 112rpx;display: flex;align-items: center;">
+        <view class="touxiang">
+          <image src="{{img_avatar}}" alt="" class="photo" id="pic" mode="aspectFill" bindtap='wx_img' name="pic" wx:if="{{img_act==''}}" />
+          <image src="{{img_act}}" alt="" class="photo" id="pic" mode="aspectFill" bindtap='wx_img' name="pic" wx:if="{{img_act!=''}}" />
+          <input hidden name="pic" value="{{img_act}}"></input>
+        </view>
+        <image src="../../img/home/right.png" alt="" class="sca" />
+      </view>
+    </view>
+    <view class='box_li' bindtap='rev_nick'>
+      <view class="fl">昵称</view>
+      <view class="fr">
+        <text class="value" id="nick">{{nick_name}}</text>
+        <image src="../../img/home/right.png" alt="" class="right sca" />
+      </view>
+    </view>
+    <view class='box_li'>
+      <view class="fl ">ID</view>
+      <view class="fr">
+        <text class="value" id="account_id">{{userinfo.account_id}}</text>
+      </view>
+    </view>
+    <view class="sexIcon box_li">
+      <view class="fl">姓别</view>
+      <view class="fr" style="width: 600rpx;text-align: right;">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="picker">
+            <text class="value sex sex-btn" style="width: 350rpx;display: inline-block;" wx:if="{{array[index]!=''&&chushi_sex==1}}">{{array[index]}}</text>
+            <text class="value sex sex-btn" style="width: 350rpx;display: inline-block;" wx:if="{{userinfo.sex==1&&chushi_sex==0}}">男</text>
+            <text class="value sex sex-btn" style="width: 350rpx;display: inline-block;" wx:if="{{userinfo.sex==2&&chushi_sex==0}}">女</text>
+            <text class="value sex sex-btn" style="width: 350rpx;display: inline-block;" wx:if="{{userinfo.sex==0&&chushi_sex==0}}">请选择性别</text>
+            <image src="../../img/home/right.png" alt="" class="right sca sex-btn" />
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="birthday box_li">
+      <view class="fl ">生日</view>
+      <view class="fr" style="width: 600rpx;text-align: right;">
+        <picker mode="date" value="{{date}}" start="1900-09-01" end="2050-09-01" bindchange="bindDateChange">
+          <view class="picker">
+            <text class="value hisdate date-btn" style="width: 200rpx;display: inline-block;" wx:if="{{chushi_date==1}}">{{date}}</text>
+            <text class="value hisdate date-btn" style="width: 200rpx;display: inline-block;" wx:if="{{userinfo.birthday!=''&&chushi_date==0}}">{{userinfo.birthday}}</text>
+            <text class="value hisdate date-btn" style="width: 200rpx;display: inline-block;" wx:if="{{userinfo.birthday==''&&chushi_date==0}}">请选择生日</text>
+            <image src="../../img/home/right.png" alt="" class="right sca date-btn" />
+          </view>
+        </picker>
+
+      </view>
+    </view>
+  </view>
+  <view class="save-btn" bindtap='savebtn'>保存</view>
+</view>
