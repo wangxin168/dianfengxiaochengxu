@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "巅峰社交"
+  "navigationBarTitleText": "巅峰社交",
+  "enablePullDownRefresh": true
 }

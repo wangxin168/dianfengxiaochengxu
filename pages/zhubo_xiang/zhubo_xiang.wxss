@@ -195,3 +195,39 @@
   border-top-right-radius: 15rpx;
   border-bottom-right-radius: 15rpx;
 }
+.list{
+  width: 100%;
+}
+.list .list_li{
+  width: 80%;
+  margin: 40rpx 10%;
+  display: flex;
+  align-items: center;
+}
+.list .list_li .pai{
+  width: 43rpx;
+  height: 52rpx;
+  display: block;
+}
+.list .list_li .actor{
+  width: 70rpx;
+  height: 70rpx;
+  display: block;
+  margin-left: 23rpx;
+  border-radius: 50%;
+}
+.list .list_li .meili{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 25rpx;
+}
+.list .list_li .meili view:nth-of-type(1){
+  font-size: 28rpx;
+color: #FFFFFF;
+}
+.list .list_li .meili view:nth-of-type(2){
+  font-size: 26rpx;
+color: #BFBFBF;
+letter-spacing: 2.36rpx;
+}

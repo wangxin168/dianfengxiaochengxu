@@ -20,7 +20,7 @@
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='my_swiper_box' circular="true" indicator-active-color="#655AF6">
     <block wx:for="{{imgUrls}}" wx:key='index'>
       <swiper-item bindtap="tiaozhuan" data-type="{{item.type}}" data-route_id="{{item.route_id}}" data-id="{{item.id}}">
-        <image src="{{item}}" class="slide-image my_swiper_img" mode="aspectFill" />
+        <image src="{{item}}" class="slide-image my_swiper_img" mode="aspectFill" data-list="{{imgUrls}}" data-src="{{item}}" bindtap="imgYu"/>
       </swiper-item>
     </block>
   </swiper>

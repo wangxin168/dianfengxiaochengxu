@@ -5,18 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: ['../../img/home/banner.png', '../../img/home/banner.png', '../../img/home/banner.png'],
+    imgUrls: [],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000,
-    navtab: ["主播介绍", "留言"],
+    navtab: ["主播介绍", "留言","贡献榜"],
     currentTab: 0,
     account_id:'',
     details:'',
     liuyan_list:[],
     sum_page: 1,
-    current_page: 1
+    current_page: 1,
+    shenhaobang:[],
+    current: 0,
   },
 
   /**
@@ -31,6 +33,9 @@ Page({
   },
   swichNav: function (e) {
     var that = this;
+    that.setData({
+      current: e.target.dataset.current
+    })
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
@@ -38,12 +43,32 @@ Page({
         currentTab: e.target.dataset.current
       })
     }
+    if (that.data.current==2){
+      that.gongxian();
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
+  },
+  //图片点击事件
+  imgYu: function (event) {
+    var src = event.currentTarget.dataset.src;//获取data-src
+    var imgList = event.currentTarget.dataset.list;//获取data-list
+    //图片预览
+    wx.previewImage({
+      current: src, // 当前显示图片的http链接
+      urls: imgList // 需要预览的图片http链接列表
+    })
+  },
+  dianji_img:function(e){
+    var src = e.currentTarget.dataset.src;//获取data-src
+    wx.previewImage({
+      current: src, // 当前显示图片的http链接,
+      urls: [src]
+    })
   },
   liuyan:function(){
     var that=this;
@@ -74,6 +99,35 @@ Page({
       }
     });
   },
+  gongxian: function () {
+    var that = this;
+    wx.request({
+      url: getApp().globalData.url + '/api.php/interfaces/index/s_gift_detail',
+      data: {
+        zhubo_id: that.data.account_id,
+        page: that.data.current_page,
+        pagesize: 12
+      },
+      success: res => {
+        console.log(res)
+        if (that.data.current_page == 1) {
+          that.setData({
+            shenhaobang: res.data.data.list,
+            sum_page: res.data.data.totalpage
+          })
+        } else {
+          var new_page_cont = that.data.shenhaobang;
+          var current_guide_list = res.data.data.list;
+          for (var i = 0; i < current_guide_list.length; i++) {
+            new_page_cont.push(current_guide_list[i])
+          }
+          that.setData({
+            shenhaobang: new_page_cont
+          })
+        }
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -94,6 +148,7 @@ Page({
       }
     });
     that.liuyan();
+    that.gongxian();
   },
   house:function(e){
     // console.log(e)
@@ -140,6 +195,7 @@ Page({
       sum_page: 1
     })
     that.liuyan();
+    that.gongxian();
   },
 
   /**
@@ -158,7 +214,12 @@ Page({
         icon: 'loading',
         duration: 1000
       })
-      that.liuyan();
+      
+      if (that.data.current == 2) {
+        that.gongxian();
+      } else {
+        that.liuyan();
+      }
     } else if (current_page > that.data.sum_page) {
       wx.showToast({
         title: '数据已加载完',

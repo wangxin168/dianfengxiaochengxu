@@ -6,17 +6,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: ['../../img/home/banner.png', '../../img/home/banner.png', '../../img/home/banner.png'],
+    imgUrls: [],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000,
-    navtab: ["周榜", "日榜", "月榜"],
+    navtab: ["周榜", "日榜", "月榜","神豪榜"],
     currentTab: 0,
     current:0,
     zhubo_list:[],
     sum_page:1,
-    current_page:1
+    current_page:1,
+    shenhaobang:[]
   },
 
   /**
@@ -31,7 +32,11 @@ Page({
       current: e.target.dataset.current,
       current_page: 1
     })
-    that.list_bang();
+    if (that.data.current==3){
+      that.shenhao();
+    }else{
+      that.list_bang();
+    }
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
@@ -45,6 +50,16 @@ Page({
    */
   onReady: function () {
 
+  },
+  //图片点击事件
+  imgYu: function (event) {
+    var src = event.currentTarget.dataset.src;//获取data-src
+    var imgList = event.currentTarget.dataset.list;//获取data-list
+    //图片预览
+    wx.previewImage({
+      current: src, // 当前显示图片的http链接
+      urls: imgList // 需要预览的图片http链接列表
+    })
   },
   list_bang: function () {
     var that = this;
@@ -70,6 +85,35 @@ Page({
           }
           that.setData({
             zhubo_list: new_page_cont
+          })
+        }
+      }
+    });
+  },
+  shenhao: function () {
+    var that = this;
+    wx.request({
+      url: getApp().globalData.url + '/api.php/interfaces/index/shen_top',
+      data: {
+        type: Number(that.data.current) + 1,
+        page: that.data.current_page,
+        pagesize: 12
+      },
+      success: res => {
+        console.log(res)
+        if (that.data.current_page == 1) {
+          that.setData({
+            shenhaobang: res.data.data.list,
+            sum_page: res.data.data.totalpage
+          })
+        } else {
+          var new_page_cont = that.data.shenhaobang;
+          var current_guide_list = res.data.data.list;
+          for (var i = 0; i < current_guide_list.length; i++) {
+            new_page_cont.push(current_guide_list[i])
+          }
+          that.setData({
+            shenhaobang: new_page_cont
           })
         }
       }
@@ -121,6 +165,7 @@ Page({
       sum_page: 1
     })
     that.list_bang();
+    that.shenhao();
   },
 
   /**
@@ -139,7 +184,11 @@ Page({
         icon: 'loading',
         duration: 1000
       })
-      that.list_bang();
+      if (that.data.current == 3) {
+        that.shenhao();
+      } else {
+        that.list_bang();
+      }
     } else if (current_page > that.data.sum_page) {
       wx.showToast({
         title: '数据已加载完',
