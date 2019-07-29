@@ -135,7 +135,7 @@ Page({
         search: that.data.serch
       },
       success: res => {
-        console.log(res)
+        // console.log(res)
         if (that.data.current_page == 1) {
           if (res.data.data.list) {
             that.setData({
@@ -164,7 +164,7 @@ Page({
         // uid: wx.getStorageSync('uid')
       },
       success: res => {
-        console.log(res)
+        // console.log(res)
         that.setData({
           imgUrls: res.data.data.carousel
         })
@@ -179,7 +179,7 @@ Page({
         // uid: wx.getStorageSync('uid')
       },
       success: res => {
-        console.log(res)
+        // console.log(res)
         that.setData({
           array: res.data.data.platform
         })
@@ -199,9 +199,10 @@ Page({
         that.setData({
           id: id
         })
-        console.log(that.data.id)
+        // console.log(that.data.id)
       }
     });
+    
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作

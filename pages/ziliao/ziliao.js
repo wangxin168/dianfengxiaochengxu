@@ -163,12 +163,9 @@ Page({
   },
   savebtn:function(){
     var that = this;
-    // if (that.data.date == '请选择生日') {
-    //   var date = 0;
-    //   that.setData({
-    //     date:
-    //   })
-    // }
+    if (that.data.wx_codeimg[0] == undefined) {
+      that.data.wx_codeimg[0]=''
+    }
     wx.request({
       url: getApp().globalData.url + '/api.php/interfaces/index/save_userinfo',
       data: {
