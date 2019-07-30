@@ -22,7 +22,7 @@ Page({
     id: '',
     current_page: 1,
     sum_page: 1,
-    serch: ''
+    serch: '',
   },
   //事件处理函数
   bindViewTap: function() {
@@ -57,7 +57,6 @@ Page({
         }
       })
     }
-
   },
   //图片点击事件
   imgYu: function (event) {
@@ -111,7 +110,7 @@ Page({
     that.list_zhubo();
   },
   zhubo_xiang: function(e) {
-    console.log(e)
+    // console.log(e)
     wx.navigateTo({
       url: '/pages/zhubo_xiang/zhubo_xiang?account_id=' + e.currentTarget.dataset.account_id
     })

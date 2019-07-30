@@ -33,14 +33,14 @@ Page({
     })
   },
   bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value,
       chushi_sex:1
     })
   },
   bindDateChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value,
       chushi_date: 1
@@ -69,7 +69,7 @@ Page({
           userinfo: res.data.data.userinfo,
           img_avatar: res.data.data.userinfo.avatar
         })
-        console.log(that.data.img_avatar)
+        // console.log(that.data.img_avatar)
         if (wx.getStorageSync('nickname')!=''){
           that.setData({
             nick_name: wx.getStorageSync('nickname')
@@ -176,7 +176,7 @@ Page({
         birthday:that.data.date
       },
       success: res => {
-        console.log(res)
+        // console.log(res)
         wx.navigateBack({
           delta: 1
         })

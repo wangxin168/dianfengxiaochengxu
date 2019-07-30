@@ -90,7 +90,7 @@ Page({
         account_id: wx.getStorageSync('account_id')
       },
       success: res => {
-        console.log(res)
+        // console.log(res)
         if(res.data.code==1){
           that.setData({
             userinfo: res.data.data.userinfo,

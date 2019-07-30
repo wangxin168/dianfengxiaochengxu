@@ -26,7 +26,7 @@ Page({
    */
   onLoad: function (options) {
     var that=this;
-    console.log(options)
+    // console.log(options)
     that.setData({
       account_id: options.account_id
     })
@@ -80,7 +80,7 @@ Page({
         pagesize: 12
       },
       success: res => {
-        console.log(res)
+        // console.log(res)
         if (that.data.current_page == 1) {
           that.setData({
             liuyan_list: res.data.data.message_lst,
@@ -109,7 +109,7 @@ Page({
         pagesize: 12
       },
       success: res => {
-        console.log(res)
+        // console.log(res)
         if (that.data.current_page == 1) {
           that.setData({
             shenhaobang: res.data.data.list,
@@ -140,7 +140,7 @@ Page({
         account_id: that.data.account_id
       },
       success: res => {
-        console.log(res)
+        // console.log(res)
         that.setData({
           imgUrls: res.data.data.zhubo.lunbo,
           details: res.data.data.zhubo

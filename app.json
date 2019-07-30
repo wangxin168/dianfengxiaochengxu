@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
     "pages/wode/wode",
@@ -14,11 +14,16 @@
     "pages/autring/autring",
     "pages/reautr/reautr"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#142338",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "backgroundColor": "#fff",
@@ -44,5 +49,6 @@
         "selectedIconPath": "img/icon/wode_y.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
